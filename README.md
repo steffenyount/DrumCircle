@@ -3,7 +3,7 @@ with Hippe AI for BeOS R5
 
 This directory contains the version 1.0.2 of the Drum Circle simple sequencer for BeOS R5. It was designed and tested on the Intel version of BeOS R4 and ported to PPC by Will Dyson.
 
-DrumCircle is my first BeOS app. So many parts of the User Interface are pretty Crude. 
+DrumCircle is my first BeOS app. So many parts of the User Interface are pretty Crude.
 
 DrumCircle is ShareWare. If you like the concept, want to see improvements on it, or just want to say thank you, please register your copy today. It's only $6 US. 
 
