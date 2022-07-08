@@ -74,7 +74,7 @@ extern const char* STR_ABOUT_BUTTON
 	
 extern const char* STR_ABOUT_DESC
 	= "DrumCircle 1.0 is a simple midi sequencer with a\n"
-	"knack for simulating Hippe Drum Circles\n"
+	"knack for simulating Hippie Drum Circles\n"
 	"Tweek the Tweekables and have fun!\n\n"
 	"Drum Circle was written by Steffen Yount\n";
 	
