@@ -1,0 +1,45 @@
+Changes from the original code:
+
+
+• Line 112 in globals.cpp was changed from:
+
+	DrumCircleData **	data_list = new DrumCircleData*[1] = {data};
+
+to:
+
+	DrumCircleData **	data_list = new DrumCircleData*[1];
+
+Metrowerks mwcc doens't understand the initializer, so I put
+
+	data_list[0] = data;
+
+as the first line of the main() function. This seems to work.
+
+-------
+
+• Apparently the x86 (g++) version of the standard library comes with a "strstring" header that is not present on the ppc. I have created "my_strstring.h" and "my_strstring.cpp", which do a decent job of faking <strstring.h>'s functionality (at least as far drumcircle uses it, anyhow). 
+
+For the curious, a strstring is a iostream that works on c-style strings, which is kinda convienient for formatting strings before passing them to the interface kit functions.
+
+-------
+
+• Mwcc doesn't like "foo = new (whatever*)[bar]". Removing the parens makes it compile.
+
+-------
+
+• The thread_function DrumCircleMidi::regroove() was declared improperly. It was declared:
+
+void DrumCircleMidi::regroove();
+
+According to the BeBook (and the metrowerks compiler), it needs to be declared a static member function or a global function like thus:
+
+static int32 DrumCicleMidi::regroove(void*);
+
+-------
+
+• In DrumCircleMidi::Run(), in line 145, "(void*) this" was passed as the last argument to spawn_thread. This is harmless, since this argument is being ignored, but I changed it to "(void*) NULL", as that makes it more clear that the argument is being ignored.
+
+-- 
+Will Dyson 
+will@cs.earlham.edu
+5/17/99

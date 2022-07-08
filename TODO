@@ -1,0 +1,15 @@
+Things I looking at for the next release:
+
+DrumCircle To Do List:
+
+-Put a menus on Key/Instrument buttons in place of sliders
+
+-Add Sliders so display will always fit in desktop
+
+-Add saveable general settings (superset of all the profile list, BPM, etc)
+
+-Get auto open to work
+
+-Add a Midi Out Option Menu
+
+-Make dots part of binary

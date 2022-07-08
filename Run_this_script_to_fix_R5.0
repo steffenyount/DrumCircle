@@ -1,0 +1,2 @@
+!/bin/sh
+ln -s /boot/beos/etc/synth/Patches300.hsb /boot/beos/etc/synth/big_synth.sy
