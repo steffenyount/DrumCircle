@@ -10,7 +10,6 @@
 
 #include "DrumCircleApp.h"
 
-#include <iostream>
 #include "globals.h"
 
 int main()
@@ -27,5 +26,3 @@ int main()
 	DrumCircleApp myapp;
 	myapp.Run();
 }
-
-

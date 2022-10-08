@@ -14,7 +14,6 @@
 #include <File.h>
 #include <MenuBar.h>
 #include <MenuItem.h>
-#include <iostream.h>
 #include <Directory.h>
 #include <Roster.h>
 

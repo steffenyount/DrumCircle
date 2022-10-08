@@ -10,13 +10,13 @@
 
 
 #include <Window.h>
-#include <iostream.h>
 #include <math.h>
 #include <Rect.h>
-#if __POWERPC__
+#ifdef __HAIKU__
+#include <strstream>
+#elif __POWERPC__
 #include "my_strstream.h"
-#endif
-#if __INTEL__
+#elif __INTEL__
 #include <strstream.h>
 #endif
 #include <Picture.h>
@@ -32,7 +32,9 @@
 #include "DrumMap.h"
 #include "DrumCircleMidi.h"
 
-
+#ifdef __HAIKU__
+using std::ostrstream;
+#endif
 
 //====================================================================
 //	DrumVarView Implementation

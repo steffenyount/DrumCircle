@@ -8,13 +8,6 @@
 //	
 //--------------------------------------------------------------------
 
-#if __POWERPC__
-#include "my_strstream.h"
-#endif
-#if __INTEL__
-#include <strstream.h>
-#endif
-
 #include "ValueButtonII.h"
 #include <Slider.h>
 #include <Rect.h>

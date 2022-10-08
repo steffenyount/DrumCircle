@@ -11,6 +11,7 @@
 #ifndef _ValueButton_h
 #define _ValueButton_h
 
+#include <Button.h>
 #include <View.h>
 
 const uint32 MSG_VALUE_BUTTON 	= 'VBUT';
