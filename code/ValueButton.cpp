@@ -9,10 +9,11 @@
 //--------------------------------------------------------------------
 
 #include "ValueButton.h"
-#if __POWERPC__
+#ifdef __HAIKU__
+#include <strstream>
+#elif __POWERPC__
 #include "my_strstream.h"
-#endif
-#if __INTEL__
+#elif __INTEL__
 #include <strstream.h>
 #endif
 #include <Slider.h>
@@ -22,6 +23,10 @@
 #include <View.h>
 #include <Point.h>
 #include <Application.h>
+
+#ifdef __HAIKU__
+using std::ostrstream;
+#endif
 
 //====================================================================
 //	ValueButton Implementation

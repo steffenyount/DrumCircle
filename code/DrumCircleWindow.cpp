@@ -14,7 +14,6 @@
 #include <MenuItem.h>
 #include <File.h>
 #include <TranslationUtils.h>
-#include <iostream.h>
 #include <PictureButton.h>
 #include <Bitmap.h>
 #include <Button.h>
@@ -22,10 +21,11 @@
 #include <ScrollView.h>
 #include <Roster.h>
 #include <Window.h>
-#if __POWERPC__
+#ifdef __HAIKU__
+#include <strstream>
+#elif __POWERPC__
 #include "my_strstream.h"
-#endif
-#if __INTEL__
+#elif __INTEL__
 #include <strstream.h>
 #endif
 #include <Path.h>
@@ -42,6 +42,10 @@
 #include "ValueButton.h"
 #include "ValueButtonII.h"
 #include "DrumVarView.h"
+
+#ifdef __HAIKU__
+using std::ostrstream;
+#endif
 
 //====================================================================
 //	DrumCircleWindow Implementation

@@ -9,7 +9,6 @@
 //--------------------------------------------------------------------
 
 #include <Locker.h>
-#include <iostream.h>
 #include "globals.h"
 #include "DrumCircleMidi.h"
 #include "DrumCircleData.h"

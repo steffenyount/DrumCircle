@@ -16,7 +16,6 @@
 #include <View.h>
 #include <Bitmap.h>
 #include <BitmapStream.h>
-#include <iostream.h>
 #include <Application.h>
 #include <math.h>
 

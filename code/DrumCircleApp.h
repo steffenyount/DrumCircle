@@ -12,6 +12,9 @@
 #define _DrumCircleApp_h
 
 #include <Application.h>
+#include <File.h>
+#include <MidiSynth.h>
+
 class DrumCircleWindow;
 
 //====================================================================

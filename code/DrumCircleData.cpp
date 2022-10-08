@@ -9,14 +9,19 @@
 //--------------------------------------------------------------------
 
 #include "DrumCircleData.h"
-#if __POWERPC__
+#ifdef __HAIKU__
+#include <strstream>
+#elif __POWERPC__
 #include "my_strstream.h"
-#endif
-#if __INTEL__
+#elif __INTEL__
 #include <strstream.h>
 #endif
 #include <Message.h>
 #include <Errors.h>
+
+#ifdef __HAIKU__
+using std::ostrstream;
+#endif
 
 //====================================================================
 //	Helper functions

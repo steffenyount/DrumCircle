@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <View.h>
 #include <OS.h>
-#include <iostream.h>
 #include "DrumCircleData.h"
 
 //====================================================================
