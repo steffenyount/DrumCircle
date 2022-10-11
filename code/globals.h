@@ -14,6 +14,16 @@
 
 #include <GraphicsDefs.h>
 
+
+#ifndef DATAPREFIX
+#define DATAPREFIX "Stuff"
+#endif
+
+#ifndef SETTINGSPREFIX
+#define SETTINGSPREFIX "Profiles"
+#endif
+
+
 class DrumCircleData;
 class DrumCircleMidi;
 

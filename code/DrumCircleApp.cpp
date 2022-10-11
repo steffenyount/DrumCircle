@@ -63,65 +63,50 @@ void DrumCircleApp::AboutRequested(void)
 
 void DrumCircleApp::ReadyToRun(void)
 {
-	
-// the part under here needs to be replaced. . . 
-// with a settings file type stuff
+	// the part under here needs to be replaced. . .
+	// with a settings file type stuff
 	entry_ref * ref;
-	app_info * appinf = new app_info;
 	BEntry * file;
-	BDirectory * dir;
-	if ( GetAppInfo(appinf) == B_OK )
+	BMessage * m;
+	file = new BEntry(SETTINGSPREFIX "/Default", true);
+	if (file->InitCheck() == B_OK)
 	{
-		BEntry * ent2 = new BEntry(&appinf->ref);
-		dir = new BDirectory();
-		ent2->GetParent(dir);
-		delete ent2;
-		BMessage * m;
-		file = new BEntry(dir, "Profiles/Default", true);
-		if (file->InitCheck() == B_OK)
-		{
-			ref = new entry_ref;
-			file->GetRef(ref);
-			m = new BMessage();
-			m->AddRef("refs", ref);
-			RefsReceived(m);
-			delete ref;
-			delete m;
-			delete file;		
-		}
-		file = new BEntry(dir, "Profiles/808Set", true);
-		if (file->InitCheck() == B_OK)
-		{
-			ref = new entry_ref;
-			file->GetRef(ref);
-			m = new BMessage();
-			m->AddRef("refs", ref);
-			RefsReceived(m);
-			delete ref;
-			delete m;
-			delete file;		
-		}
-		file = new BEntry(dir, "Profiles/C Chord", true);
-		if (file->InitCheck() == B_OK)
-		{
-			ref = new entry_ref;
-			file->GetRef(ref);
-			m = new BMessage();
-			m->AddRef("refs", ref);
-			RefsReceived(m);
-			delete ref;
-			delete m;
-			delete file;		
-		}		
-		delete dir;
+		ref = new entry_ref;
+		file->GetRef(ref);
+		m = new BMessage();
+		m->AddRef("refs", ref);
+		RefsReceived(m);
+		delete ref;
+		delete m;
+		delete file;
 	}
-	delete appinf;
-	
-	
-//connect synth
-	dcmidi->Connect(msynth);	
+	file = new BEntry(SETTINGSPREFIX "/808Set", true);
+	if (file->InitCheck() == B_OK)
+	{
+		ref = new entry_ref;
+		file->GetRef(ref);
+		m = new BMessage();
+		m->AddRef("refs", ref);
+		RefsReceived(m);
+		delete ref;
+		delete m;
+		delete file;
+	}
+	file = new BEntry(SETTINGSPREFIX "/C Chord", true);
+	if (file->InitCheck() == B_OK)
+	{
+		ref = new entry_ref;
+		file->GetRef(ref);
+		m = new BMessage();
+		m->AddRef("refs", ref);
+		RefsReceived(m);
+		delete ref;
+		delete m;
+		delete file;
+	}
 
-//	cout << "ready to run\n";
+	// connect synth
+	dcmidi->Connect(msynth);
 }
 
 void DrumCircleApp::RefsReceived(BMessage *message) 

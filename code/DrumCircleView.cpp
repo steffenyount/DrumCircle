@@ -37,10 +37,10 @@ DrumCircleView::DrumCircleView(uint32 resizingMode)
 	: BView(BRect(0, 0, 100, 100), "DrumCircle View", resizingMode,
 		B_WILL_DRAW | B_PULSE_NEEDED)
 {
-	lgdot = BTranslationUtils::GetBitmapFile("Stuff/lightgreendot");
-	dgdot = BTranslationUtils::GetBitmapFile("Stuff/darkgreendot");
-	lrdot = BTranslationUtils::GetBitmapFile("Stuff/lightreddot");
-	drdot = BTranslationUtils::GetBitmapFile("Stuff/darkreddot");
+	lgdot = BTranslationUtils::GetBitmapFile(DATAPREFIX "/lightgreendot");
+	dgdot = BTranslationUtils::GetBitmapFile(DATAPREFIX "/darkgreendot");
+	lrdot = BTranslationUtils::GetBitmapFile(DATAPREFIX "/lightreddot");
+	drdot = BTranslationUtils::GetBitmapFile(DATAPREFIX "/darkreddot");
 	if (lgdot == NULL || dgdot == NULL || lrdot == NULL || drdot == NULL)
 	{
 		ierror("unable to load graphics\n");

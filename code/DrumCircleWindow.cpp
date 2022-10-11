@@ -365,23 +365,7 @@ void DrumCircleWindow::MessageReceived(BMessage *message)
 			{
 				d_list_isrt = (uint)i;
 				entry_ref * ref = new entry_ref;
-				app_info * appinf = new app_info;
-				BEntry * ent;
-				BDirectory * dir;
-				if ( be_app->GetAppInfo(appinf) == B_OK )
-				{
-					BEntry * ent2 = new BEntry(&appinf->ref);
-					dir = new BDirectory();
-					ent2->GetParent(dir);
-					delete ent2;
-					ent = new BEntry(dir, "Profiles", true);
-					delete dir;
-				}
-				else
-				{
-					ent = new BEntry("Profiles", true);
-				}	
-				delete appinf;
+				BEntry *ent = new BEntry(SETTINGSPREFIX, true);
 				ent->GetRef(ref);
 				delete ent;
 				BFilePanel * fp = new BFilePanel(B_OPEN_PANEL, new BMessenger(this), ref, B_FILE_NODE);
@@ -473,23 +457,7 @@ void DrumCircleWindow::MessageReceived(BMessage *message)
 				BMessage * mp = new BMessage(B_SAVE_REQUESTED);
 				mp->AddInt32("indx", i);
 				entry_ref * ref = new entry_ref;
-				app_info * appinf = new app_info;
-				BEntry * ent;
-				BDirectory * dir;
-				if ( be_app->GetAppInfo(appinf) == B_OK )
-				{
-					BEntry * ent2 = new BEntry(&appinf->ref);
-					dir = new BDirectory();
-					ent2->GetParent(dir);
-					delete ent2;
-					ent = new BEntry(dir, "Profiles", true);
-					delete dir;
-				}
-				else
-				{
-					ent = new BEntry("Profiles", true);
-				}	
-				delete appinf;
+				BEntry *ent = new BEntry(SETTINGSPREFIX, true);
 				ent->GetRef(ref);
 				delete ent;
 				BFilePanel * fp = new BFilePanel(B_SAVE_PANEL, new BMessenger(this), ref, B_FILE_NODE, false, mp, NULL, false, true);
