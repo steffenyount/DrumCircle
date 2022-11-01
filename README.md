@@ -1,8 +1,8 @@
 # The Drum Circle simple sequencer
-#### with Hippie AI for BeOS R5
+#### with Hippie AI for Haiku and BeOS R5
 ***
 ### About:
-This directory contains the version 1.0.3 of the Drum Circle simple sequencer for BeOS R5. It was designed and tested on the Intel version of BeOS R4 and ported to PPC by Will Dyson.
+This directory contains the version 1.0.4 of the Drum Circle simple sequencer for Haiku and BeOS R5. It was designed and tested on the Intel version of BeOS R4 and ported to PPC by Will Dyson, and later adapted for Haiku by David Karoly.
 
 DrumCircle is my first BeOS app. So many parts of the User Interface are pretty Crude.
 
@@ -45,3 +45,5 @@ Start the program, and you will see a myriad of buttons and lights. Almost all o
 1.0.2 Fixed a compile bug for R5 and changed the MIME types to comply more with standards
 
 1.0.3 Imported to GitHub, updated license, fixed some spelling, and updated the README
+
+1.0.4 Adapted to run on the Haiku OS. Thank you, David Karoly!
