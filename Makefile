@@ -22,8 +22,10 @@ LDFLAGS=-lstdc++ -lbe -lmidi -ltracker -ltranslation
 %.o: %.cpp
 	gcc -c -o $@ $< $(CXXFLAGS)
 
-DrumCircle: $(OBJS)
+DrumCircle: $(OBJS) code/DrumCircle.rsrc
 	gcc -o $@ $(OBJS) $(LDFLAGS)
+	xres -o $@ code/DrumCircle.rsrc
+	mimeset -F $@
 
 .PHONY: install
 install: DrumCircle
