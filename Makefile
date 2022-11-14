@@ -25,6 +25,11 @@ LDFLAGS=-lstdc++ -lbe -lmidi -ltracker -ltranslation
 DrumCircle: $(OBJS)
 	gcc -o $@ $(OBJS) $(LDFLAGS)
 
+.PHONY: clean
+clean:
+	@rm -f DrumCircle $(OBJS)
+	@echo "Clean done."
+
 .PHONY: install
 install: DrumCircle
 	install -m 755 -d $(bindir)
