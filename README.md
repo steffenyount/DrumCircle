@@ -47,3 +47,6 @@ Start the program, and you will see a myriad of buttons and lights. Almost all o
 1.0.3 Imported to GitHub, updated license, fixed some spelling, and updated the README
 
 1.0.4 Adapted to run on the Haiku OS. Thank you, David Karoly!
+
+1.0.5 Upstreamed fixes from haikuports and other build file cleanup. Thank you, Oscar Lesta!
+
