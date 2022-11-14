@@ -17,13 +17,13 @@ datadir?=Stuff
 settingsdir?=Profiles
 CXXFLAGS+=-DDATAPREFIX=\"$(datadir)\" -DSETTINGSPREFIX=\"$(settingsdir)\"
 
-LDFLAGS=-lstdc++ -lbe -lmidi -ltracker -ltranslation
+LDFLAGS=-lbe -lmidi -ltracker -ltranslation
 
 %.o: %.cpp
-	gcc -c -o $@ $< $(CXXFLAGS)
+	g++ -c -o $@ $< $(CXXFLAGS)
 
 DrumCircle: $(OBJS) code/DrumCircle.rsrc
-	gcc -o $@ $(OBJS) $(LDFLAGS)
+	g++ -o $@ $(OBJS) $(LDFLAGS)
 	xres -o $@ code/DrumCircle.rsrc
 	mimeset -F $@
 
