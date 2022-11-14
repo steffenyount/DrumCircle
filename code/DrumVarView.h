@@ -32,11 +32,11 @@ public:
  	virtual void 	Pulse(void);
  	virtual void 	MouseDown(BPoint point);
 	void			MessageReceived(BMessage *);	
-	void			Openslider(BPoint here, char * winname, uint32 msg_val, 
-		uint drum, uint val, uint low, uint high, char * lowlabel, 
-		char * highlabel);
+	void			Openslider(BPoint here, const char * winname, uint32 msg_val,
+		uint drum, uint val, uint low, uint high, const char * lowlabel,
+		const char * highlabel);
 	const char *	Instname(uint drum);
-	BWindow *		GetAppWindow(char *name);
+	BWindow *		GetAppWindow(const char *name);
 			
 
 	//----------------------------------------------------------------
