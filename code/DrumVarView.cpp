@@ -477,8 +477,8 @@ void DrumVarView::MessageReceived(BMessage *message)
 	}
 }
 
-void DrumVarView::Openslider(BPoint here, char * winname, uint32 msg_val, 
-		uint drum, uint val, uint low, uint high, char * lowlabel, char * highlabel)
+void DrumVarView::Openslider(BPoint here, const char * winname, uint32 msg_val,
+		uint drum, uint val, uint low, uint high, const char * lowlabel, const char * highlabel)
 {
 	BRect		frame;
 	BSlider		*slider;
@@ -523,7 +523,7 @@ const char * DrumVarView::Instname(uint drum)
 
 /* loop through the window list of the application, looking for
    a window with a specified name. */
-BWindow	*DrumVarView::GetAppWindow(char *name)
+BWindow	*DrumVarView::GetAppWindow(const char *name)
 {
 	int32		index;
 	BWindow		*window;
