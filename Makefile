@@ -27,6 +27,11 @@ DrumCircle: $(OBJS) code/DrumCircle.rsrc
 	xres -o $@ code/DrumCircle.rsrc
 	mimeset -F $@
 
+.PHONY: clean
+clean:
+	@rm -f DrumCircle $(OBJS)
+	@echo "Clean done."
+
 .PHONY: install
 install: DrumCircle
 	install -m 755 -d $(bindir)
